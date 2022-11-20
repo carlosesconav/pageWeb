@@ -6,8 +6,8 @@ const app = express();
 const port = 4000;
 
 //handlebars
-
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
 //middleware
 
@@ -27,13 +27,23 @@ app.get('/', (req, res) => {
 
 app.get('/generic', (req, res) => {
 
-    res.sendFile(__dirname + '/public/generic.html');
+    res.render('generic',{
+
+        nombre: 'Carlos Escobar',
+        empresa: 'Carvajal'
+
+    });
 
 })
 
 app.get('/elements', (req, res) => {
 
-    res.sendFile(__dirname + '/public/elements.html');
+    res.render('elements',{
+
+        nombre: 'Carlos Escobar',
+        empresa: 'Carvajal'
+
+    });
 
 })
 
@@ -45,6 +55,6 @@ app.get('/elements', (req, res) => {
 
 app.listen(port, () => {
 
-    console.log(`Ejemplo de app listening en http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 
 })
