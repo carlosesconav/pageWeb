@@ -1,4 +1,4 @@
 # pageWeb
 
-Ejemplo de pagina web con node y HBS
+Ejemplo de pagina web sencilla con node y HBS
 
